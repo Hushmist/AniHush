@@ -1,7 +1,7 @@
 ## Before using:
 
-php artisan permission:create-role admin
-php artisan permission:create-role user
+- php artisan permission:create-role admin
+- php artisan permission:create-role user
 
 ## Users register with admin rights. 
 
