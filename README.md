@@ -1,8 +1,10 @@
-#Before using:
+## Before using:
+
 php artisan permission:create-role admin
 php artisan permission:create-role user
 
-#Users register with admin rights. 
+## Users register with admin rights. 
+
 To fix App\Http\Controllers\AuthController.php in the line $user->assign Role('admin'); 
 change admin to user
 
