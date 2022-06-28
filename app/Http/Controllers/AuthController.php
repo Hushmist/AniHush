@@ -16,10 +16,9 @@ class AuthController extends Controller
     public function login(Request $request) 
     {
         $data = $request->validate([
-            'email' => ['required', 'email', 'string'],
+            'name' => ['required', 'string'],
             'password' => ['required']
         ]);
-
         if(auth('web')->attempt($data)) 
         {
             return redirect(route('home'));
@@ -45,7 +44,7 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'password' => bcrypt($request['email'])
+            'password' => bcrypt($request['password'])
         ]);
         $user->assignRole('admin'); //common user
         if($user) 

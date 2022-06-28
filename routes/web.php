@@ -28,9 +28,9 @@ Route::middleware('guest')->group(function() {
     Route::post('/register_process', [AuthController::class, 'register'])->name('register_process');
 });
 
-Route::resource('/category', App\Http\Controllers\CategoryController::class);
+Route::resource('/categories', App\Http\Controllers\CategoryController::class);
 
-Route::resource('/article', App\Http\Controllers\ArticleController::class);
+Route::resource('/articles', App\Http\Controllers\ArticleController::class);
 
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {

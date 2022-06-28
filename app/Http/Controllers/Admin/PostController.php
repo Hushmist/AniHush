@@ -43,7 +43,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Article();
+        $post = new Post();
         $post->title = $request->title;
         $post->img = $request->img;
         $post->text = $request->text;

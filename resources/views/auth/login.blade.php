@@ -9,9 +9,9 @@
         <form action="{{route('login_process')}}" method="post">
             @csrf
             <p class="text-danger"> @if(session()->get('error')) {{session()->get('error')}}  @endif </p>
-            <label>Email</label>
-            <input type="text" name="email" id="email" placeholder="Введите ваш логин">
-            @error('email')
+            <label>Login</label>
+            <input type="text" name="name" id="name" placeholder="Введите ваш логин">
+            @error('name')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             <label>Пароль</label>

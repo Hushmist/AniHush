@@ -11,7 +11,7 @@
 
     @foreach ($category->posts as $article)
     <div class="blog_post">
-        <a class="blog" href="{{ route('article.show', $article['id']) }}">
+        <a class="blog" href="{{ route('articles.show', $article['id']) }}">
             <img class="blog_post_img" src="{{$article['img']}}">
             <div class="blog_post_text">
                 <div class="blog_post_text_caption">
@@ -28,7 +28,7 @@
                 <div class="blog_post_text_categorie">
                     <p class="fs-6">
                         Категория:
-                        <a class="blog_post_text_categorie_link" href="{{ route('category.show', $article->category['id']) }}">
+                        <a class="blog_post_text_categorie_link" href="{{ route('categories.show', $article->category['id']) }}">
                             {{$article->category['title']}}
                         </a>
                     </p>

@@ -13,7 +13,7 @@
     <div class="d-block m-auto">
         <div class="header_navigation">
             @foreach ($categories as $category)
-                    <a href="{{ route('category.show', $category['id']) }}" class="header_navigation_text">
+                    <a href="{{ route('categories.show', $category['id']) }}" class="header_navigation_text">
                         <h2>
                             {{$category->title}}
                         </h2>
