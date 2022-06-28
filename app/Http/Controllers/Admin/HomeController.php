@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Article as Post;
 use App\Models\Category;
 
 class HomeController extends Controller

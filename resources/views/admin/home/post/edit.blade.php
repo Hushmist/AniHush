@@ -40,7 +40,7 @@
                                 {{-- Select --}}
                                 <div class="form-group">
                                     <label>Выберите катeгорию</label>
-                                    <select name="cat_id" class="form-control" required>
+                                    <select name="category_id" class="form-control" required>
                                         @foreach ($categories as $category)ty
                                             <option value="{{$category['id']}}" @if($category['id'] == $post['cat_id']) selected @endif>
                                                 {{$category['title']}}
@@ -64,7 +64,7 @@
                           <!-- /.card-body -->
           
                           <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                            <button type="submit" class="btn btn-primary" name="user_id" value="{{Auth::user()->id}} ">Сохранить</button>
                           </div>
                         </form>
                       </div>

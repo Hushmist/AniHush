@@ -16,17 +16,16 @@ class AuthController extends Controller
     public function login(Request $request) 
     {
         $data = $request->validate([
-            'name' => ['required', 'string'],
+            'email' => ['required', 'email', 'string'],
             'password' => ['required']
         ]);
 
-        
         if(auth('web')->attempt($data)) 
         {
             return redirect(route('home'));
         }
 
-        return redirect()->back()->with('error', 'Логин или пароль неверные');
+        return redirect()->back()->with(['error'=> 'Пользователь не найден, или данные не совпадають']);
     }
     
     public function register_form() 

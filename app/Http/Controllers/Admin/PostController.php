@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Article as Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -43,11 +43,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post();
+        $post = new Article();
         $post->title = $request->title;
         $post->img = $request->img;
         $post->text = $request->text;
-        $post->cat_id = $request->cat_id;
+        $post->category_id = $request->category_id;
+        $post->user_id = $request->user_id;
+
         $post->save();
         
         return redirect()->back()->withSuccess('Статья была успешно добавлена!');
@@ -91,7 +93,9 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->img = $request->img;
         $post->text = $request->text;
-        $post->cat_id = $request->cat_id;
+        $post->category_id = $request->category_id;
+        $post->user_id = $request->user_id;
+
         $post->save();
         
         return redirect()->back()->withSuccess('Статья была успешно Обновлена!');

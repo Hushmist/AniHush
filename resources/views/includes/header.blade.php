@@ -29,6 +29,15 @@
                 </h2>
             </a>
         </div>
+            @role('admin')
+                <div class="d-block m-auto">
+                    <a href="{{route('homeAdmin')}}" class="header_navigation_text">
+                        <h2>
+                            Админ панель
+                        </h2>
+                    </a>
+                </div>
+            @endrole
         <div class="d-block m-auto">
             <a href="{{route('logout')}}" class="header_navigation_text">
                 <h2>

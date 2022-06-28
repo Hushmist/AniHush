@@ -39,7 +39,7 @@
                                 {{-- Select --}}
                                 <div class="form-group">
                                     <label>Выберите катeгорию</label>
-                                    <select name="cat_id" class="form-control" required>
+                                    <select name="category_id" class="form-control" required>
                                         @foreach ($categories as $category)ty
                                             <option value="{{$category['id']}}">{{$category['title']}}</option>
                                         @endforeach
@@ -61,7 +61,7 @@
                           <!-- /.card-body -->
           
                           <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Добавить</button>
+                            <button type="submit" name="user_id" value="{{Auth::user()->id}} " class="btn btn-primary">Добавить</button>
                           </div>
                         </form>
                       </div>
