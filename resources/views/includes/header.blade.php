@@ -1,60 +1,32 @@
-<div class="container-xxl bg-dark d-flex" style="padding: 1vh 0;" > 
-    <div class="d-block m-auto">
-        <a class="header_logo" href="/">
-            <img class="header_logo_img" src="{{asset('img/gamepad.png')}}">
-            <div class="header_logo_text">
-                <h2>
-                    Gamer's hub
-                </h2>
-            </div>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="header_logo_img" src="{{asset('img/gamepad.png')}}">
         </a>
-    </div>
 
-    <div class="d-block m-auto">
-        <div class="header_navigation">
-            @foreach ($categories as $category)
-                    <a href="{{ route('categories.show', $category['id']) }}" class="header_navigation_text">
-                        <h2>
-                            {{$category->title}}
-                        </h2>
-                    </a>
-            @endforeach
-        </div>
-    </div>
-    @auth('web')
-        <div class="d-block">
-            <a href="#" class="header_navigation_text">
-                <h2>
-                    {{Auth::user()->name}}
-                </h2>
-            </a>
-        </div>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          @foreach ($categories as $category)
+            <li><a href="{{ route('categories.show', $category['id']) }}" class="nav-link px-2 text-white">{{$category->title}}</a></li>
+          @endforeach
+        </ul>
+
+        @guest('web')
+          <div class="text-end">
+            <a type="button" href="{{route('login')}}" class="btn btn-outline-light me-2">Логин</a>
+            <a type="button" href="{{route('register')}}" class="btn btn-warning">Регистрация</a>
+          </div>
+        @endguest
+
+        @auth('web')
+          <div class="text-end">
+            <a type="button" href="{{route('logout')}}" class="btn btn-outline-light me-2">Выйти</a>
             @role('admin')
-                <div class="d-block m-auto">
-                    <a href="{{route('homeAdmin')}}" class="header_navigation_text">
-                        <h2>
-                            Админ панель
-                        </h2>
-                    </a>
-                </div>
+              <a type="button" href="{{route('homeAdmin')}}" class="btn btn-warning">Админ панель</a>
             @endrole
-        <div class="d-block m-auto">
-            <a href="{{route('logout')}}" class="header_navigation_text">
-                <h2>
-                    logout
-                </h2>
-            </a>
-        </div>
-    @endauth
+          </div>
+        @endauth
 
-    @guest('web')
-        <div class="d-block m-auto">
-            <a href="{{route('login')}}" class="header_navigation_text">
-                <h2>
-                    Login
-                </h2>
-            </a>
-        </div>
-    @endguest
-    
-</div>
+      </div>
+    </div>
+  </header>
