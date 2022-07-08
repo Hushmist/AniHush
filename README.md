@@ -5,13 +5,13 @@ composer install
 ```
 
 ```
-    copy .env.example .env
-    php artisan key:generate
+copy .env.example .env
+php artisan key:generate
 ```
 
 ```
-    php artisan permission:create-role admin
-    php artisan permission:create-role user
+php artisan permission:create-role admin
+php artisan permission:create-role user
 ```
 
 Run project
