@@ -1,7 +1,9 @@
-## Before using:
+## Installation
 
+- composer install
 - php artisan permission:create-role admin
 - php artisan permission:create-role user
+- php artisan serve
 
 ## Users register with admin rights. 
 
