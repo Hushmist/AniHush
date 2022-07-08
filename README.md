@@ -1,10 +1,22 @@
 ## Installation
 
-- composer install
-- php artisan permission:create-role admin
-- php artisan permission:create-role user
-- php artisan serve
+composer install
+```
 
+```
+    copy .env.example .env
+    php artisan key:generate
+``
+
+```
+    php artisan permission:create-role admin
+    php artisan permission:create-role user
+```
+
+Run project
+
+php artisan serve
+``
 ## Users register with admin rights. 
 
 To fix App\Http\Controllers\AuthController.php in the line $user->assign Role('admin'); 
