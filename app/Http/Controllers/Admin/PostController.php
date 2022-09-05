@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Article as Post;
 use App\Models\Category;
+use App\Models\Access;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -30,8 +31,10 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::orderBy('created_at', 'DESC')->get();
+        $accesses = Access::all();
         return view('admin.home.post.create', [
             'categories' => $categories,
+            'accesses' => $accesses
         ]);
     }
 
@@ -49,6 +52,10 @@ class PostController extends Controller
         $post->text = $request->text;
         $post->category_id = $request->category_id;
         $post->user_id = $request->user_id;
+        if(!$request->access_id) 
+            $post->access_id = null;
+        else 
+            $post->access_id = $request->access_id;
 
         $post->save();
         
@@ -75,9 +82,11 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
+        $accesses = Access::all();
         return view('admin.home.post.edit', [
             'post' => $post,
             'categories' => $categories,
+            'accesses' => $accesses
         ]);
     }
 
@@ -95,7 +104,10 @@ class PostController extends Controller
         $post->text = $request->text;
         $post->category_id = $request->category_id;
         $post->user_id = $request->user_id;
-
+        if($request->access_id == 0) 
+            $post->access_id = null;
+        else 
+            $post->access_id = $request->access_id;
         $post->save();
         
         return redirect()->back()->withSuccess('Статья была успешно Обновлена!');

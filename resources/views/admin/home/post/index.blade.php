@@ -41,6 +41,9 @@
                               <th>
                                   Дата добавление
                               </th>
+                              <th>
+                                  Доступ
+                              </th>
                               <th style="width: 30%">
                               </th>
                           </tr>
@@ -59,6 +62,13 @@
                                 </td>
                                 <td>
                                     {{$post['created_at']}}
+                                </td>
+                                <td>
+                                    @if (is_null($post['access_id']))
+                                      Все
+                                    @else
+                                      {{$post->access['name']}}
+                                    @endif
                                 </td>
                                 <td class="project-actions text-right">
                                     

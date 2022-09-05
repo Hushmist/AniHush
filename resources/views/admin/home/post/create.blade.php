@@ -50,6 +50,20 @@
                               <textarea name="text" class="editor"></textarea>
                             </div>
 
+                            <div class="form-group">
+                                {{-- Select --}}
+                                <div class="form-group">
+                                    <label>Выберите уровень доступа</label>
+                                    <select name="access_id" class="form-control" required>
+                                        <option value="0">Все</option>
+                                        @isset ($accesses)
+                                            @foreach ($accesses as $access)
+                                                <option value="{{$access['id']}}">{{$access['name']}}</option>
+                                            @endforeach
+                                        @endisset
+                                    </select>
+                                </div>
+                            </div>
                             
                             <div class="form-group">
                               <label for="feature_image">Изоброжение статьи</label>
