@@ -15,7 +15,9 @@
 		<div class="col-11 main text-break">
 			<div class="row justify-content-between">
 				<div class="col-12">
+					<div class="last_news_contents">
 						@yield('content')
+					</div>
 				</div>
 
 				<div class="col-3">

@@ -256,7 +256,7 @@ a:hover {
 
 .blog_post_img {
     margin: 20px;
-    border-radius: 200px;
+    /*border-radius: 200px;*/
     width: 150px;
     height: 150px;
 }

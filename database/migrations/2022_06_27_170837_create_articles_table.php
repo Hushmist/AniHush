@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('category_id');
             $table->string('img');
-            $table->bigInteger('access_id')->default('1');
+            $table->bigInteger('access_id')->nullable();
             $table->timestamps();
         });
     }
