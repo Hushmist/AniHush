@@ -25,7 +25,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                       <strong class="d-inline-block mb-2 text-primary">{{$article->category['title']}}</strong>
                       <h3 class="mb-0">{{$article->title}}</h3>
-                      <a href="{{ route('articles.show', $article['id']) }}" class="stretched-link">Continue reading</a>
+                      <a href="{{ route('articles.show', $article['id']) }}" class="stretched-link">Перейти к чтению</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                       <img class="blog_post_img" src="{{$article['img']}}">
