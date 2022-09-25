@@ -9,16 +9,8 @@
 
 @section('content')
 
-    @empty($articles)
-        <div class="row mb-2">
-            <div class="col-md">
-                <h1 class="text-center">Статьи не найдены</h1>
-            </div>
-        </div>
-    @endempty
-
     @foreach ($articles as $article)
-        @if (is_null($article['access_id']) || $article['user_id'] == Auth::id())
+        {{-- @if (is_null($article['access_id']) || $article['user_id'] == Auth::id()) --}}  {{-- not fully working --}} 
             <div class="row mb-2">
                 <div class="col-md">
                   <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light">
@@ -33,10 +25,15 @@
                   </div>
                 </div>
               </div>
-        @endif
+        {{-- @endif --}}
     @endforeach
+
+    @empty($articles)
+        <div class="row mb-2">
+            <div class="col-md">
+                <h1 class="text-center">Статьи не найдены</h1>
+            </div>
+        </div>
+    @endempty
+    
 @endsection
-{{-- 
-@section('second_col')
-    @include('includes.second_col')
-@endsection --}}

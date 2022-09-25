@@ -32,9 +32,11 @@ Route::resource('/categories', App\Http\Controllers\CategoryController::class);
 
 Route::resource('/articles', App\Http\Controllers\ArticleController::class);
 
+Route::put('/store_comment', [App\Http\Controllers\Admin\CommentController::class, 'store'])->name('store_comment');
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
     Route::resource('category', App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('post', App\Http\Controllers\Admin\PostController::class);
+    Route::resource('post', App\Http\Controllers\Admin\CommentController::class);
 });
