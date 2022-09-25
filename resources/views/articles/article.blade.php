@@ -24,3 +24,7 @@
     </div>
 </div>
 @endsection
+{{-- 
+@section('second_col')
+    @include('includes.second_col')
+@endsection --}}

@@ -21,7 +21,6 @@ class ArticleResource extends JsonResource
             'img' => $this->img,
             'category' => new CategoryResource(Category::find($this->category_id)->first()),
             'user_id' => $this->user_id,
-            'access_id' => $this->access_id,
             'created_at' => $this->created_at,
         ];
     }

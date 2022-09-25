@@ -1,59 +1,35 @@
-@extends('layouts.auth')
+@extends('layouts.main_page_layout')
 
 @section('title', 'Games Hub')
 
+@section('header', '')
 @section('content')
-   <section class="w-100 p-4 d-flex justify-content-center pb-4 mt-5">
-         <form action="{{route('register_process')}}" method="post" style="width: 22rem;">
-            @csrf
-            <p class="text-danger"> @if(session()->get('error')) {{session()->get('error')}}  @endif </p>
-
-           <!-- Name input -->
-           <div class="form-outline mb-4">
-             <input type="text" name="name" id="name" class="form-control">
-             <label class="form-label" for="form2Example1" style="margin-left: 0px;">Логин</label>
-             @error('name')
-                 <p class="text-danger">{{$message}}</p>
-             @enderror
-           <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
-
-           <!-- Email input -->
-           <div class="form-outline mb-4">
-             <input type="email" name="email" id="email" class="form-control">
-             <label class="form-label" for="form2Example2" style="margin-left: 0px;">Почта</label>
-
-             @error('email')
-                 <p class="text-danger">{{$message}}</p>
-             @enderror
-           <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
-
-           <!-- Password input -->
-           <div class="form-outline mb-4">
-             <input type="password" name="password" id="password" class="form-control">
-             <label class="form-label" for="form2Example2" style="margin-left: 0px;">Пароль</label>
-             @error('password')
-                 <p class="text-danger">{{$message}}</p>
-             @enderror
-           <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
-
-
-           <!-- Password input -->
-           <div class="form-outline mb-4">
-             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-             <label class="form-label" for="form2Example2" style="margin-left: 0px;">Подтвердите пароль</label>
-
-             @error('password_confirmation')
-                 <p class="text-danger">{{$message}}</p>
-             @enderror
-           <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
-
-           <!-- Submit button -->
-           <button class="btn btn-primary mb-4">Отправить</button>
-
-           <!-- Register buttons -->
-           <div class="text-center">
-             <p>Уже есть аккаунта? <a href="{{route('login')}}">Войти</a></p>
-           </div>
-         </form>
-       </section>
+<div class="login">
+    <form action="{{route('register_process')}}" method="post" >
+        @csrf
+        <p class="text-danger"> @if(session()->get('error')) {{session()->get('error')}}  @endif </p>
+        <label>Логин</label>
+        <input type="text" name="name" placeholder="Введите Ваш логин" >
+            @error('name')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+        <label>Почта</label>
+        <input type="text" name="email" placeholder="Введите Вашу эл. почту" >
+            @error('email')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+        <label>Пароль</label>
+        <input type="password" name="password" placeholder="Введите Ваш пароль">
+            @error('password')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+        <label>Подтвердите пароль</label>
+        <input type="password" name="password_confirmation" placeholder="Введите Ваш пароль заново">
+            @error('password_confirmation')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+        <button type="submit">Отправить</button>
+        <a href="{{route('login')}}">Логин</a>
+    </form>
+</div>
 @endsection
