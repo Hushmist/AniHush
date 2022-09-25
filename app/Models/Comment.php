@@ -10,7 +10,7 @@ class Comment extends Model
 
     use HasFactory;
 
-    public function category() 
+    public function article() 
     {
         return $this->belongsTo(Article::class);
     }

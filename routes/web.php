@@ -38,5 +38,5 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
     Route::resource('category', App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('post', App\Http\Controllers\Admin\PostController::class);
-    Route::resource('post', App\Http\Controllers\Admin\CommentController::class);
+    Route::resource('comment', App\Http\Controllers\Admin\CommentController::class);
 });

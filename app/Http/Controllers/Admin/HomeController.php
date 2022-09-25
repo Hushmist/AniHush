@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article as Post;
 use App\Models\Category;
+use App\Models\Comment;
 
 class HomeController extends Controller
 {
@@ -18,9 +19,11 @@ class HomeController extends Controller
     {
         $posts_count = Post::count();
         $categories_count = Category::count();
+        $comments_count = Comment::count();
         return view('admin.home.index', [
             'posts_count' => $posts_count,
             'categories_count' => $categories_count,
+            'comments_count' => $comments_count,
         ]);
     }
 

@@ -16,7 +16,12 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        
+        $comments = Comment::orderBy('created_at', 'desc')->get();
+
+        return view('admin.home.comment.index', [
+            'comments' => $comments,
+        ]);
     }
 
     /**
@@ -37,8 +42,6 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-
-       
         $comment = new Comment();
         $comment->user_id = $request->user_id;
         $comment->article_id = $request->article_id;
@@ -47,8 +50,6 @@ class CommentController extends Controller
         $comment->save();
         
         return redirect()->back();
-        
-
     }
 
     /**
@@ -70,7 +71,9 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        return view('admin.home.comment.edit', [
+            'comment' => $comment,
+        ]);
     }
 
     /**
@@ -82,7 +85,9 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->text = $request->text;
+        $comment->save();
+        return redirect()->back()->withSuccess('Комментарий была обновлена!');
     }
 
     /**
@@ -93,6 +98,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+
+        return redirect()->back()->withSuccess('Комментарий была успешно удалена!');
     }
 }
