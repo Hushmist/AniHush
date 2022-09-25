@@ -6,6 +6,9 @@ composer install
 
 ```
 copy .env.example .env
+```
+In the newly created file .env in the DB_DATABASE= line, enter the name of the database and create the same in My SQL
+```
 php artisan key:generate
 ```
 
