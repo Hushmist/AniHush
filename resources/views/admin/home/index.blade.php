@@ -49,6 +49,21 @@
                 <a href="{{route('category.index')}}" class="small-box-footer">Все категории<i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3>{{$comments_count}}</h3>
+  
+                  <p>Комментарий</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-chatbox-working"></i>
+                </div>
+                <a href="{{route('comment.index')}}" class="small-box-footer">Все комментарий<i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
             
           </div>
           <!-- /.row -->

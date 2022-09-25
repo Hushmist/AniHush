@@ -110,6 +110,22 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="{{route('category.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-align-left"></i>
+              <p>
+                Категории
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('comment.index')}}" class="nav-link">
+                  <p>Все комментарий</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
             <a href="{{route('home')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
