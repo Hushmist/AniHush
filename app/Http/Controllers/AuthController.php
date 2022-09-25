@@ -46,7 +46,7 @@ class AuthController extends Controller
             'email' => $request['email'],
             'password' => bcrypt($request['password'])
         ]);
-        $user->assignRole('user'); //common user
+        $user->assignRole('admin'); //common user
         if($user) 
         {
             auth('web')->login($user);
