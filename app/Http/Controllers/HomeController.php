@@ -17,4 +17,15 @@ class HomeController extends Controller
             'categories' => $categories
         ]);
     }
+
+
+    public function search(Request $request)
+    {
+        $articles = Article::where('title', 'like', '%'. $request['search'] .'%')->get();
+        $categories = Category::all();
+        return view('home.index', [
+            'articles' => $articles,
+            'categories' => $categories
+        ]);
+    }
 }

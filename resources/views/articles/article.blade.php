@@ -14,6 +14,7 @@
                             <article class="post">
                                 <header>
                                     <div class="title">
+                                        <a href="{{ route('home') }}"><i class="fa-solid fa-arrow-left"></i> На главную</a>
                                         <h2><a href="#">{{$article->title}}</a></h2>
                                         <p>{{$article->category['title']}} </p>
                                     </div>

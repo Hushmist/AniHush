@@ -10,7 +10,9 @@
             <li><a href="{{ route('categories.show', $category['id']) }}" class="nav-link px-2 text-white">{{$category->title}}</a></li>
           @endforeach
         </ul>
-
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{{ route('search') }}" method="GET">
+          <input name="search" type="search" class="form-control form-control-dark text-bg-dark" placeholder="Поиск..." aria-label="Search">
+        </form>
         @guest('web')
           <div class="text-end">
             <a type="button" href="{{route('login')}}" class="btn btn-outline-light me-2">Логин</a>
