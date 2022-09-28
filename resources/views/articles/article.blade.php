@@ -1,6 +1,6 @@
 @extends('layouts.article')
 
-@section('title', 'Games Hub')
+@section('title', $article['title'])
 
 @section('content')
 

@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Games Hub')
+@section('title', 'Логин')
 
 @section('content')
    <section class="w-100 p-4 d-flex justify-content-center pb-4 mt-5">

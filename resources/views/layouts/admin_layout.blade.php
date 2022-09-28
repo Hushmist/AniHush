@@ -111,9 +111,9 @@
           </li>
           <li class="nav-item">
             <a href="{{route('category.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-align-left"></i>
+              <i class="nav-icon far fa-envelope"></i>
               <p>
-                Категории
+                Комментарий
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
