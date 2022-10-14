@@ -34,7 +34,7 @@
 
             <section style="background-color: #eee;">
               <div class="container my-5 py-5">
-                @foreach ($comments as $comment)
+                @foreach ($article->comments as $comment)
                   <div class="row d-flex justify-content-center pt-2">
                     <div class="col-md-12 col-lg-10 col-xl-8">
                       <div class="card">

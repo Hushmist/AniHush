@@ -35,7 +35,7 @@
                               <th>
                                   Название
                               </th>
-                              <th style="width: 30%">
+                              <th style="width: 40%">
                               </th>
                           </tr>
                       </thead>
