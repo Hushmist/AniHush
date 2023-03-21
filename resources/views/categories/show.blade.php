@@ -18,6 +18,8 @@
             </div>
         </div>
     @endforelse
+
+    @include('includes.footer')
 @endsection
 {{-- 
 @section('second_col')
